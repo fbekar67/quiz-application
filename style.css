@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.quiz-box{
+    display: none;
+
+}
+
+.animation{
+    transition: all 0.9s ease;
+    transform: translate(-10%,-20%);
+}
