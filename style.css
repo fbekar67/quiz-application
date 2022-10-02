@@ -10,6 +10,6 @@
     transition: all 0.9s ease;
     transform: translate(-10%,-20%) scale(1);
 }
-#options-list .d-grid .opti.diss{
+#options-list .d-grid .opti.disabled{
  pointer-events: none;
 }

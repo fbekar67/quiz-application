@@ -73,7 +73,6 @@ nextQuestion.addEventListener("click", function () {
     quiz.soruIndex += 1;
     let qnum = `${quiz.soruIndex}/${quiz.sorular.length}`
     document.querySelector(".qnum").innerHTML= qnum;
-    console.log(qnum)
   } else {
     let quizIsFinish = `<h4 class="card-title">Quiz finished</h4>`;
     document.querySelector(".card-body").innerHTML = quizIsFinish;
@@ -84,33 +83,38 @@ nextQuestion.addEventListener("click", function () {
 });
 
 function soruGoster(soru) {
-  let question = `<h5 class="card-title">${soru.soruMetni}</h5>`;
-  let options = '';
- 
+    let question = `<h5 class="card-title">${soru.soruMetni}</h5>`;
+    let options = '';
+  
 
-   for (let cevap in soru.cevapSecenekleri) {
-     options += `<div class="d-grid gap-2 list-group">
-     <button class="list-group-item list-group-item-action rounded opti" type="button">
-     <b>${cevap}</b>: ${soru.cevapSecenekleri[cevap]}</button><div/>`;
-   }
-  document.querySelector(".card-body").innerHTML = question;
-  opt_list.innerHTML = options;
-  const opt_true = opt_list.querySelectorAll('.opti')
-  for (let rr of opt_true){
-    rr.setAttribute("onclick","optionSelected(this)")
-  }
+    for (let cevap in soru.cevapSecenekleri) {
+      options += `
+      <div class="d-grid gap-2 list-group">
+          <button class="list-group-item list-group-item-action rounded opti" type="button"><b>${cevap}</b>: ${soru.cevapSecenekleri[cevap]}</button>
+      </div>
+      `};
+
+    document.querySelector(".card-body").innerHTML = question;
+    opt_list.innerHTML = options;
+    const opt_true = opt_list.querySelectorAll('.opti')
+    for (let rr of opt_true){
+      rr.setAttribute("onclick"," optionSelected(this)")
+    }
 };
+
 function optionSelected(trueValue){
   let cvp = trueValue.querySelector("button b").textContent;
+  console.log(cvp);
+
   let soru=quiz.sorugetir();
    if(soru.cevabiKontrolEt(cvp)){
     trueValue.classList.add('list-group-item-success')
     }else{
       trueValue.classList.add('list-group-item-danger')
+    }
 
-    }
-    for(let i=0; i < opt_list.children.length; i++){
-      opt_list.children[i].disabled = true;
-      console.log(opt_list.children.length)
-    }
+    
+    for(let i=0; i<opt_list.children.length; i++){
+      document.querySelectorAll(".opti").disabled = true;
+    };
 };
