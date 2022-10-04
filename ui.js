@@ -6,6 +6,7 @@ function UI () {
     this.correctIcon = '<i class="fa-regular fa-check"></i>',
     this.incorrectIcon = '<i class="fa-light fa-xmark"></i>'
 };
+  
 
 UI.prototype.soruGoster = function (soru) {
     let question = `<h5 class="card-title">${soru.soruMetni}</h5>`;
