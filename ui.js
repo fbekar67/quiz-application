@@ -3,8 +3,8 @@ function UI () {
     this.nextQuestion = document.querySelector(".next-button"),
     this.soruCard = document.querySelector(".container"),
     this.opt_list = document.querySelector(".card-body2"),
-    this.correctIcon = '<i class="fa-regular fa-check"></i>',
-    this.incorrectIcon = '<i class="fa-light fa-xmark"></i>'
+    this.correctIcon = '<i class="bi bi-check2"></i>',
+    this.incorrectIcon = '<i class="bi bi-bookmark-x"></i>'
 };
   
 

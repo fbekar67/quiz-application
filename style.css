@@ -13,3 +13,11 @@
 #options-list .d-grid .opti.disabled{
  pointer-events: none;
 }
+.timeline{
+    position: absolute;
+    background-color: #F0A500;
+    top: 11.5%;
+    left: 0%;
+    height: 3px;
+    
+}
